@@ -17,15 +17,17 @@
     "start:app": "react-scripts start",
     "start:server": "netlify-lambda serve functions -c ./webpack.config.js",
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
-    "build": "npm-run-all --parallel build:**",
+    "build:origin": "npm-run-all --parallel build:**",
     "build:app": "react-scripts build",
     "build:functions": "netlify-lambda build functions -c ./webpack.config.js",
     "test": "react-scripts test --env=jsdom",
     "lambda": "netlify-lambda serve functions -c ./webpack.config.js",
+    "lambda:build": "netlify-lambda build functions -c ./webpack.config.js",
     "rollup": "rollup -c -w",
     "rollup:build": "rollup -c",
     "live": "npx live-server --open=/public/ --proxy=/public/.netlify/functions/:http://localhost:9000/.netlify/functions/",
-    "dev": "run-p checkForFaunaKey live lambda rollup"
+    "dev": "run-p checkForFaunaKey live lambda rollup",
+    "build": "run-s lambda:build rollup:build"
   },
   "devDependencies": {
     "http-proxy-middleware": "^0.19.1",
