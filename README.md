@@ -15,7 +15,7 @@ npm install
 SET FAUNADB_SECRET=ADMIN_KEY
 SET FAUNADB_SERVER_SECRET=DB_KEY
 npm run bootstrap
-npm run dev
+npm run start
 ```
 
 ## build
