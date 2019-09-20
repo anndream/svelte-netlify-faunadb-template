@@ -4,8 +4,8 @@
 ## Get Started
 
 ```
-npx degit TheSacredLipton/svelte-netlify-faunadb-template
-cd svelte-netlify-faunadb-template
+npx degit TheSacredLipton/svelte-netlify-faunadb-template my-app
+cd my-app
 npm install
 ```
 
